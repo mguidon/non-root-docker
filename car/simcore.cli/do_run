@@ -1,0 +1,10 @@
+#!/bin/bash
+
+in_1=$INPUT_FOLDER/input
+out_1=$OUTPUT_FOLDER/output
+log_file=$LOG_FOLDER/log.dat
+
+args=" --in_1 $in_1 --out_1 $out_1"
+echo "This is stdout from container"
+echo "This is stderr from container" >&2
+cd /home/scu/build && ./solver $args >> $log_file

@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  sidecar:
+    build:
+        context: ./sidecar
+        dockerfile: Dockerfile
+    volumes:
+      - input:/home/scu/input
+      - output:/home/scu/output
+      - log:/home/scu/log
+      - /var/run/docker.sock:/var/run/docker.sock
+  car:
+    build:
+        context: ./car
+        dockerfile: Dockerfile
+volumes:
+  input:
+  output:
+  log:
